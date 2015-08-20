@@ -5,7 +5,7 @@
 ## Installation
 
 ```console
- $ curl -fsSL git.io/vs8v0 | sh
+ $ curl -fsSL git.io/bryggeri | sh
 ```
 
 All this installation script does is download the `bryggeri` script, make it an executable, and copy it to your `$PATH (/usr/local/bin)`. For copying to your `$PATH`, it may require you to enter your password. If there is a better way to do this, please send in a pull request.
