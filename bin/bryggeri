@@ -78,7 +78,7 @@ bryggeri() {
 
     for pkg in "${packages[@]}"; do
         if brew list -1 | grep -q "^${pkg}\$"; then
-            echo "Package '$pkg' is installed"
+            printf "\e[92m[✔] \e[32mPackage \e[39m'$pkg' \e[32mis already installed!\n"
         else
             brew install $(IFS=" "; echo "${pkg[@]}")
         fi
