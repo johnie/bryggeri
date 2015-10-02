@@ -11,6 +11,8 @@ packages=(
     "couchdb"
     "curl"
     "docker"
+    "docker-compose"
+    "docker-machine"
     "drush"
     "git"
     "git-extras"
