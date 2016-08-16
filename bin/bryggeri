@@ -4,6 +4,7 @@ version="0.0.1"
 
 # Packages to install
 packages=(
+    "node"
     "tmux"
     "brew-cask"
     "chrome-cli"
