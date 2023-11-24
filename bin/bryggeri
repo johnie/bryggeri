@@ -1,58 +1,104 @@
 #!/usr/bin/env bash
 
-version="0.0.1"
+version="1.0.6"
 
 # Packages to install
 packages=(
-    "cask"
-    "mas"
-    "tmux"
+    "ansible"
+    "bat"
     "chrome-cli"
+    "coreutils"
     "curl"
-    "git"
+    "entr"
+    "exa"
+    "ffmpeg"
+    "fx"
+    "fzf"
+    "git-delta"
     "git-extras"
+    "git"
     "go"
-    "hr"
-    "htop-osx"
-    "hub"
+    "httpie"
+    "gh"
     "imagemagick"
-    "irssi"
+    "jq"
+    "mas"
+    "ncdu"
+    "neovim"
+    "nmap"
+    "nvm"
     "openssl"
     "python"
-    "tree"
-    "wget"
-    "the_silver_searcher"
-    "coreutils"
-    "youtube-dl"
-    "ffmpeg"
-    "speedtest-cli"
     "rclone"
-    "jq"
-    "ncdu"
-    "nmap"
-    "entr"
-    "bat"
-    "exa"
-    "fx"
+    "ripgrep"
+    "rust"
+    "speedtest-cli"
+    "tmux"
+    "tre-command"
+    "wget"
+    "youtube-dl"
 )
 
-# usage info
+# Casks to install
+casks=(
+    "adobe-creative-cloud"
+    "appcleaner"
+    "bartender"
+    "brave-browser"
+    "docker"
+    "dropbox"
+    "figma"
+    "firefox"
+    "google-chrome"
+    "iterm2"
+    "karabiner-elements"
+    "keepingyouawake"
+    "raycast"
+    "rectangle"
+    "spotify"
+    "visual-studio-code"
+    "warp"
+)
+
 usage() {
 cat <<EOF
 
     Usage: bryggeri [options]
 
     Options:
-        -V, --version    Output version
-        -L, --list       Output the packages
-        -h, --help       This message
-        --               End of options
+        install           Install packages
+        install --casks   Install casks
+        -V, --version     Output version
+        -L, --list        Output the packages
+        -h, --help        This message
+        --                End of options
 
 EOF
 }
 
 
-# parse options
+bryggeriMain() {
+        echo -e "\033[1;97m🍼 Bryggeri:\033[0m Installing packages...\n"
+    for pkg in "${packages[@]}"; do
+        if brew ls --versions "${pkg}" > /dev/null; then
+            printf "\e[92m[✔] \e[32mPackage \e[39m'$pkg' \e[32mis already installed!\n"
+        else
+            brew install $(IFS=" "; echo "${pkg[@]}")
+        fi
+    done
+}
+
+bryggeriCasks() {
+    echo -e "\033[1;97m🍼 Bryggeri:\033[0m Installing casks...\n"
+    for cask in "${casks[@]}"; do
+        if brew list --cask | grep -q "^${cask}\$"; then
+            printf "\e[92m[✔] \e[32mCask \e[39m'$cask' \e[32mis already installed!\n"
+        else
+            brew install --cask $(IFS=" "; echo "${cask[@]}")
+        fi
+    done
+}
+
 while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do
     case $1 in
         -V | --version )
@@ -70,22 +116,17 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]]; do
     esac
     shift
 done
+
 if [[ "$1" == "--" ]]; then shift; fi
 
+if [[ "$1" == "i" || "$1" == "install" ]]; then
+    shift
+    if [[ "$1" == "-c" || "$1" == "--cask" ]]; then
+        bryggeriCasks
+    else
+        bryggeriMain
+    fi
+    exit
+fi
 
-# Main function
-bryggeri() {
-
-    # First, check if you already have on of the packages installed
-    # if not, install it
-
-    for pkg in "${packages[@]}"; do
-        if brew list -1 | grep -q "^${pkg}\$"; then
-            printf "\e[92m[✔] \e[32mPackage \e[39m'$pkg' \e[32mis already installed!\n"
-        else
-            brew install $(IFS=" "; echo "${pkg[@]}")
-        fi
-    done
-}
-
-bryggeri
+usage
