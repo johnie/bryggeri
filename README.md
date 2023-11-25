@@ -5,7 +5,7 @@
 ## Installation
 
 ```console
- $ /bin/bash -c "$(curl -fsSL https://brg.re/install.sh)"
+ $ /bin/bash -c "$(curl -fsSL https://brg.re/install)"
 ```
 
 All this installation script does is download the `bryggeri` script, make it an executable, and copy it to your `$PATH (/usr/local/bin)`. For copying to your `$PATH`, it may be required to enter your password. If there is a better way to do this, please send in a pull request.
