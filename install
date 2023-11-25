@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 install() {
     printf "\e[33m[~] Downloading script...\e[0m\n"
 
