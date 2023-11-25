@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+
+    <style>
+      body {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0 auto;
+        max-width: 50rem;
+        padding: 2rem;
+        background-color: #363062;
+        color: #f5f5f5;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      pre {
+        background-color: #4d4c7d;
+        color: #eee;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        font-size: 0.875rem;
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      pre::-webkit-scrollbar {
+        height: 0.25rem;
+      }
+
+      pre::-webkit-scrollbar-track {
+        background: #242042;
+      }
+
+      pre::-webkit-scrollbar-thumb {
+        background: #f99417;
+      }
+
+      p code {
+        background-color: #4d4c7d;
+        color: #f5f5f5;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-weight: bold;
+      }
+
+      blockquote {
+        border-left: 0.25rem solid #f99417;
+        padding-left: 1rem;
+        color: #eee;
+        margin: 1rem 0;
+      }
+
+      a,
+      a:visited {
+        color: #f99417;
+      }
+
+      a:hover {
+        color: #f99417;
+        text-decoration: underline;
+      }
+
+      .copy-button {
+        background-color: #363062;
+        border: 0;
+        border-radius: 0.25rem;
+        color: #f5f5f5;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: 0.5rem;
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      .copy-button:hover {
+        background-color: #f99417;
+      }
+
+      .copy-button:active {
+        background-color: #f99417;
+      }
+
+      .copy-button:focus {
+        outline: 0;
+      }
+
+      .copy-button svg {
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        vertical-align: middle;
+      }
+
+      .sr-only {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+    </style>
+
+    <title>🍼 Bryggeri – Bundle install useful packages with Homebrew</title>
+  </head>
+  <body>
+    <main>
+      <article><h1>🍼 Bryggeri</h1>
+
+<blockquote>
+<p>Bundle install useful packages with <a href="http://brew.sh/">Homebrew</a></p>
+</blockquote>
+
+<h2>Installation</h2>
+
+<pre><code class="language-console"> $ /bin/bash -c &quot;$(curl -fsSL https://brg.re/install.sh)&quot;
+</code></pre>
+
+<p>All this installation script does is download the <code>bryggeri</code> script, make it an executable, and copy it to your <code>$PATH (/usr/local/bin)</code>. For copying to your <code>$PATH</code>, it may be required to enter your password. If there is a better way to do this, please send in a pull request.</p>
+
+<p><code>bryggeri</code> relies solely on <code>brew</code> - if you don&rsquo;t already have it installed just paste the following into the terminal:</p>
+
+<pre><code class="language-console"> $ /bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&quot;
+</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code class="language-console">  Usage: bryggeri [options]
+
+  Options:
+      install           Install packages
+      install --casks   Install casks
+      -V, --version     Output version
+      -L, --list        Output the packages
+      -h, --help        This message
+      --                End of options
+</code></pre>
+
+<h3>Formulaes</h3>
+
+<ul>
+<li><a href="https://formulae.brew.sh/formula/ansible">ansible</a>: An open-source automation tool for configuration management, application deployment, and task automation.</li>
+<li><a href="https://formulae.brew.sh/formula/bat">bat</a>: A cat clone with syntax highlighting and Git integration.</li>
+<li><a href="https://formulae.brew.sh/formula/chrome-cli">chrome-cli</a>: A command-line tool for controlling Google Chrome.</li>
+<li><a href="https://formulae.brew.sh/formula/coreutils">coreutils</a>: GNU core utilities (including &ldquo;ls&rdquo;, &ldquo;cp&rdquo;, &ldquo;mv&rdquo;, and more) for macOS.</li>
+<li><a href="https://formulae.brew.sh/formula/curl">curl</a>: Command-line tool for transferring data with URLs.</li>
+<li><a href="https://formulae.brew.sh/formula/entr">entr</a>: Event notify test runner.</li>
+<li><a href="https://formulae.brew.sh/formula/exa">exa</a>: A modern replacement for &ldquo;ls&rdquo; with additional features.</li>
+<li><a href="https://formulae.brew.sh/formula/ffmpeg">ffmpeg</a>: A complete solution to record, convert, and stream audio and video.</li>
+<li><a href="https://formulae.brew.sh/formula/fx">fx</a>: Command-line JSON processing tool.</li>
+<li><a href="https://formulae.brew.sh/formula/fzf">fzf</a>: Command-line fuzzy finder.</li>
+<li><a href="https://formulae.brew.sh/formula/git-delta">git-delta</a>: A viewer for Git and diff output.</li>
+<li><a href="https://formulae.brew.sh/formula/git-extras">git-extras</a>: Small Git utilities.</li>
+<li><a href="https://formulae.brew.sh/formula/git">git</a>: Distributed version control system.</li>
+<li><a href="https://formulae.brew.sh/formula/go">go</a>: The Go programming language.</li>
+<li><a href="https://formulae.brew.sh/formula/httpie">httpie</a>: Command-line HTTP client.</li>
+<li><a href="https://formulae.brew.sh/formula/gh">gh</a>: Command-line tool that wraps Git in GitHub.</li>
+<li><a href="https://formulae.brew.sh/formula/imagemagick">imagemagick</a>: A software suite to create, edit, and compose bitmap images.</li>
+<li><a href="https://formulae.brew.sh/formula/mas">mas</a>: A command-line interface for the Mac App Store.</li>
+<li><a href="https://formulae.brew.sh/formula/ncdu">ncdu</a>: NCurses Disk Usage, a disk usage analyzer with an ncurses interface.</li>
+<li><a href="https://formulae.brew.sh/formula/neovim">neovim</a>: Neovim, a highly configurable, extensible text editor.</li>
+<li><a href="https://formulae.brew.sh/formula/nmap">nmap</a>: Network exploration tool and security scanner.</li>
+<li><a href="https://formulae.brew.sh/formula/nvm">nvm</a>: Node Version Manager, a tool for managing multiple versions of Node.js.</li>
+<li><a href="https://formulae.brew.sh/formula/openssl">openssl</a>: SSL/TLS cryptography library.</li>
+<li><a href="https://formulae.brew.sh/formula/python">python</a>: Interpreted, high-level, general-purpose programming language.</li>
+<li><a href="https://formulae.brew.sh/formula/rust">rust</a>: The Rust programming language.</li>
+<li><a href="https://formulae.brew.sh/formula/rclone">rclone</a>: Rsync for cloud storage.</li>
+<li><a href="https://formulae.brew.sh/formula/ripgrep">ripgrep</a>: Recursively search your current directory for a regex pattern.</li>
+<li><a href="https://formulae.brew.sh/formula/speedtest-cli">speedtest-cli</a>: Command-line interface for testing internet bandwidth.</li>
+<li><a href="https://formulae.brew.sh/formula/tmux">tmux</a>: Terminal multiplexer.</li>
+<li><a href="https://formulae.brew.sh/formula/tre-command">tre-command</a>: Display directories as trees.</li>
+<li><a href="https://formulae.brew.sh/formula/wget">wget</a>: Internet file retriever.</li>
+<li><a href="https://formulae.brew.sh/formula/youtube-dl">youtube-dl</a>: A command-line program to download videos from YouTube and other sites.</li>
+</ul>
+
+<h3>Casks</h3>
+
+<ul>
+<li><a href="https://formulae.brew.sh/cask/adobe-creative-cloud">adobe-creative-cloud</a>: Adobe Creative Cloud, a suite of creative software.</li>
+<li><a href="https://formulae.brew.sh/cask/appcleaner">appcleaner</a>: AppCleaner, a utility to uninstall unwanted apps.</li>
+<li><a href="https://formulae.brew.sh/cask/bartender">bartender</a>: Bartender, a tool to manage your menu bar items.</li>
+<li><a href="https://formulae.brew.sh/cask/brave-browser">brave-browser</a>: A web browser focused on privacy.</li>
+<li><a href="https://formulae.brew.sh/cask/docker">docker</a>: Docker, a platform for developing, shipping, and running applications.</li>
+<li><a href="https://formulae.brew.sh/cask/dropbox">dropbox</a>: Dropbox, a cloud storage and file synchronization service.</li>
+<li><a href="https://formulae.brew.sh/cask/figma">figma</a>: Figma, a collaborative interface design tool.</li>
+<li><a href="https://formulae.brew.sh/cask/firefox">firefox</a>: Mozilla Firefox, a popular web browser.</li>
+<li><a href="https://formulae.brew.sh/cask/google-chrome">google-chrome</a>: Google Chrome, a web browser by Google.</li>
+<li><a href="https://formulae.brew.sh/cask/iterm2">iterm2</a>: iTerm2, a terminal emulator for macOS.</li>
+<li><a href="https://formulae.brew.sh/cask/karabiner-elements">karabiner-elements</a>: Karabiner-Elements, a keyboard customizer for macOS.</li>
+<li><a href="https://formulae.brew.sh/cask/keepingyouawake">keepingyouawake</a>: KeepingYouAwake, a utility to prevent your Mac from sleeping.</li>
+<li><a href="https://formulae.brew.sh/cask/raycast">raycast</a>: Raycast, an app launcher for developers.</li>
+<li><a href="https://formulae.brew.sh/cask/rectangle">rectangle</a>: Rectangle, a window manager for macOS.</li>
+<li><a href="https://formulae.brew.sh/cask/spotify">spotify</a>: Spotify, a popular music streaming service.</li>
+<li><a href="https://formulae.brew.sh/cask/visual-studio-code">visual-studio-code</a>: Visual Studio Code, a code editor by Microsoft.</li>
+<li><a href="https://formulae.brew.sh/cask/warp">warp</a>: Warp, a fast and modern Terminal.</li>
+</ul>
+
+<h3>Contributing</h3>
+
+<p>Contributions are always welcome, from a typo in the README to a request to add another package in the list to a completely new feature itself.</p>
+
+<p>Fork the code, make a new branch, and send in a pull request.</p>
+
+<h3>Licence</h3>
+
+<p><a href="licence">MIT</a> © Johnie Hjelm</p>
+</article>
+    </main>
+
+    <script>
+      const codeBlocks = document.querySelectorAll('pre');
+
+      codeBlocks.forEach((codeBlock) => {
+        const copyButton = document.createElement('button');
+        const copyButtonText = document.createElement('span');
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>`;
+        copyButton.classList.add('copy-button');
+        copyButton.insertAdjacentHTML('afterbegin', svg);
+        copyButtonText.textContent = 'Copy';
+        copyButtonText.classList.add('sr-only');
+        copyButton.appendChild(copyButtonText);
+        codeBlock.insertAdjacentElement('afterbegin', copyButton, codeBlock);
+
+        copyButton.addEventListener('click', () => {
+          let code = codeBlock.querySelector('code').textContent;
+          if (/\$/g.test(code) || code.match(/\$/g)) {
+            code = code.replace('$', '');
+          }
+          navigator.clipboard.writeText(code);
+        });
+      });
+    </script>
+  </body>
+</html>
