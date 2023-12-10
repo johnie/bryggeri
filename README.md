@@ -38,7 +38,7 @@ All this installation script does is download the `bryggeri` script, make it an 
 - [coreutils](https://formulae.brew.sh/formula/coreutils): GNU core utilities (including "ls", "cp", "mv", and more) for macOS.
 - [curl](https://formulae.brew.sh/formula/curl): Command-line tool for transferring data with URLs.
 - [entr](https://formulae.brew.sh/formula/entr): Event notify test runner.
-- [exa](https://formulae.brew.sh/formula/exa): A modern replacement for "ls" with additional features.
+- [eza](https://formulae.brew.sh/formula/eza): A modern replacement for "ls" with additional features.
 - [ffmpeg](https://formulae.brew.sh/formula/ffmpeg): A complete solution to record, convert, and stream audio and video.
 - [fx](https://formulae.brew.sh/formula/fx): Command-line JSON processing tool.
 - [fzf](https://formulae.brew.sh/formula/fzf): Command-line fuzzy finder.
