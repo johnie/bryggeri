@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-version="1.0.6"
+version="1.0.7"
 
 # Packages to install
 packages=(
@@ -10,7 +10,7 @@ packages=(
     "coreutils"
     "curl"
     "entr"
-    "exa"
+    "eza"
     "ffmpeg"
     "fx"
     "fzf"
